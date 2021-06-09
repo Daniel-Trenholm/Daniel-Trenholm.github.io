@@ -1,0 +1,21 @@
+html {
+    background-color: #7442c8;
+    background-image: url(images/dangelo.jpg), url(images/prince.jpg);
+    background-position: left, right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 60%, 35%;
+}
+span {
+    background-color: blueviolet;
+}
+
+a {
+    font: xx-large;
+    font-size: xx-large;
+}
+
+p {
+    font-size: x-large;
+    color: #FFFF5C;
+    
+}
