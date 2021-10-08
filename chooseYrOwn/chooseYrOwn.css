@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    background-image: url("chooseImages/background.jpg");
+    background-repeat: repeat;
+}
+p {
+    color:purple;
+    background-size:auto;
+    font-family: monospace;
+    font-size: xx-large;
+    background-color:rgba(0, 0, 0, 0.45);
+}
+h1 {
+    color:maroon;
+    font-family: monospace;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+a {
+    color:midnightblue;
+    font-family: monospace;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0, 0.85);
+}
