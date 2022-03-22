@@ -1,0 +1,43 @@
+<html>
+    <head>
+
+    </head>
+    <script>
+        function loadDogShit() {
+            var randomNumber = Math.floor(Math.random() * 3);
+            var file = new XMLHttpRequest();
+            file.onreadystatechange = function () {
+                console.log("This is getting called, readyState is " + String(file.readyState) + " and status is " + String(file.status))
+                if (file.readyState === XMLHttpRequest.DONE && file.status == 200) {
+                    document.getElementById("orchestra").innerHTML = file.responseText;
+                }
+            }
+            var filePath = "";
+            switch(randomNumber) {
+                    case 0:
+                        document.getElementById("orchestraHeader").innerHTML = "Dogshit: Orchestra of Emotion";
+                    filePath = "/stories/orchestra_of_emotion/rus.txt"
+                        break;
+                    case 1:
+                        document.getElementById("orchestraHeader").innerHTML = "Orchestra of Emotion: Curse of the Alien";
+                        filePath = "/stories/orchestra_of_emotion/dan.txt"
+                        break;
+                    case 2:
+                        document.getElementById("orchestraHeader").innerHTML = "Orchestra of Emotion";
+                        filePath = "/stories/orchestra_of_emotion/mat.txt"
+                        break;
+                    default:
+                        console.log("randomNumber was " + String(randomNumber))
+                }
+            console.log("randomNumber was " + String(randomNumber))
+            file.open("GET", filePath, true)
+        }
+        
+    </script>
+    <body onload="loadDogShit()">
+        <h1 id = "orchestraHeader"></h1>
+        <p id = "orchestra"></p>
+
+    </body>
+
+</html>
