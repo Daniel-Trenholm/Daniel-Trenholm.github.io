@@ -5,38 +5,36 @@
     <script>
         function loadDogShit() {
             var randomNumber = Math.floor(Math.random() * 3);
-            var file = new XMLHttpRequest();
-            file.onreadystatechange = function () {
-                console.log("This is getting called, readyState is " + String(file.readyState) + " and status is " + String(file.status))
-                if (file.readyState === XMLHttpRequest.DONE && file.status == 200) {
-                    document.getElementById("orchestra").innerHTML = file.responseText;
-                }
-            }
-            var filePath = "";
+            
+             document.getElementById("orchestra1").hidden = true
+             document.getElementById("orchestra2").hidden = true
+             document.getElementById("orchestra3").hidden = true
+            
             switch(randomNumber) {
                     case 0:
                         document.getElementById("orchestraHeader").innerHTML = "Dogshit: Orchestra of Emotion";
-                    filePath = "/stories/orchestra_of_emotion/rus.txt"
+                        document.getElementById("orchestra1").hidden = false
                         break;
                     case 1:
                         document.getElementById("orchestraHeader").innerHTML = "Orchestra of Emotion: Curse of the Alien";
-                        filePath = "/stories/orchestra_of_emotion/dan.txt"
+                        document.getElementById("orchestra2").hidden = false
                         break;
                     case 2:
                         document.getElementById("orchestraHeader").innerHTML = "Orchestra of Emotion";
-                        filePath = "/stories/orchestra_of_emotion/mat.txt"
+                        document.getElementById("orchestra3").hidden = false
                         break;
                     default:
                         console.log("randomNumber was " + String(randomNumber))
                 }
             console.log("randomNumber was " + String(randomNumber))
-            file.open("GET", filePath, true)
         }
         
     </script>
     <body onload="loadDogShit()">
         <h1 id = "orchestraHeader"></h1>
-        <p id = "orchestra"></p>
+        <iframe src="stories/orchestra_of_emotion/rus.txt" id = "orchestra1" width="1900" height="900" frameBorder="0" style="background-color: rgb(255, 255, 255);"></iframe>
+        <iframe src="stories/orchestra_of_emotion/dan.txt" id = "orchestra2" width="1900" height="600" frameBorder="0" style="background-color: rgb(255, 255, 255);"></iframe>
+        <iframe src="stories/orchestra_of_emotion/mat.txt" id = "orchestra3" width="1900" height="600" frameBorder="0" style="background-color: rgb(255, 255, 255);"></iframe>
 
     </body>
 
